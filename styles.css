@@ -1,0 +1,59 @@
+* {
+    background-color: rgb(100, 171, 171);
+    color: white;
+    font-family: "Slackey", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+#textError {
+    color: rgb(140, 0, 0);
+}
+
+.display-none {
+    display: none;
+}
+
+.display {
+    display: block;
+    margin: auto auto;
+    text-align: center;
+}
+
+.title {
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+
+#searchCharacter {
+    background-color: white;
+    padding: 30px 7%;
+    border-radius: 10px;
+    color: black;
+}
+
+.buttonSearch {
+    background-color: black;
+    border-radius: 10px;
+    margin-top: 10px;
+    display: block;
+    padding: 20px 10.5%;
+}
+
+.buttonSearch:hover {
+    cursor: pointer;
+}
+
+#pokemonStats {
+    table-layout: fixed;
+    width: 30%;
+    border: 3px solid black;
+    border-radius: 10px;
+    margin: auto auto;
+
+}
+
+td {
+    border-left: 5px solid black;
+    padding: 10px;
+}
