@@ -9,25 +9,26 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Slackey&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="bgColor" id="bodyHTML">
     <nav>
         <h2>POKAPI</h2>
-
-        <i class="fa-solid fa-sun fa-xl" style="color: #ffffff;"></i>
+        <i class="fa-solid fa-sun fa-2xl" id="changeScheme"></i>
     </nav>
 
 
 
     <h1 class="display title">¡Descubre todo sobre tus Pokémon favoritos al instante!</h1>
-    <button onclick="getData()" class="buttonSearch display">¡Descubrirlo ya!</button>
+    <button id="redirectButton" class="buttonSearch display">¡Descubrirlo ya!</button>
 
-    <hr class="linea">
+    <hr class="lineaBlack linea" id="linea">
     <!--POKEMON API RESULTS-->
     <div>
         <h4 class="allPokemon">TODOS LOS POKEMONS</h4>
     </div>
 
+    <script src="./js/schemeColor.js"></script>
+    <script src="./js/redirect.js"></script>
     <script src="https://kit.fontawesome.com/351cca41ca.js" crossorigin="anonymous"></script>
-    <script src="get_api_infor.js"></script>
+    <script src="./js/get_api_infor.js"></script>
 </body>
 </html>

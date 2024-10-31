@@ -1,13 +1,22 @@
 * {
-    background-color:   #232827;
-    color: white;
     font-family: "Slackey", sans-serif;
     font-weight: 400;
     font-style: normal;
 }
 
+.bgColor {
+    background-color:   #232827;
+    color: white;
+}
+
+.bgColorWhite {
+    background-color: #B1E0D5;
+    color: black;
+}
+
 nav {
     background-color: #00AA82;
+    color: white;
     margin-top: 30px;
     margin-right: auto;
     margin-left: auto;
@@ -24,6 +33,7 @@ nav h2 {
 }
 
 nav i {
+    background-color: #00AA82;
     margin-right: 25px;
 }
 
@@ -48,12 +58,6 @@ nav i {
     margin-bottom: 50px;
 }
 
-#searchCharacter {
-    background-color: white;
-    padding: 30px 7%;
-    border-radius: 10px;
-    color: black;
-}
 
 .buttonSearch {
     background-color: #00AA82;
@@ -61,18 +65,26 @@ nav i {
     margin-top: 10px;
     display: block;
     padding: 20px 10.5%;
+    border: 1px solid #00AA82;
+    color: white;
 }
 
 .buttonSearch:hover {
     cursor: pointer;
     opacity: 90%;
 }
+.lineaBlack {
+    background-color: white;
+}
+
+.lineaWhite {
+    background-color: black;
+}
 
 .linea {
     width: 40%;
     border: 0;
     height: 1px;
-    background-color: white;
     margin-top: 200px;
     margin-bottom: 100px;
     opacity: 50%;
