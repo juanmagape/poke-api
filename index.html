@@ -3,29 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Pokapi | Landing</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Slackey&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1 class="display title">PokeApi</h1>
-    <p class="display-none" id="textError">Ese pokemon no existe.</p>
-    <input type="text" id="searchCharacter" class="display" placeholder="Ejemplo: Pikachu">
-    <button onclick="getData()" class="buttonSearch display">Search</button> <br>
+    <nav>
+        <h2>POKAPI</h2>
 
+        <i class="fa-solid fa-sun fa-xl" style="color: #ffffff;"></i>
+    </nav>
+
+
+
+    <h1 class="display title">¡Descubre todo sobre tus Pokémon favoritos al instante!</h1>
+    <button onclick="getData()" class="buttonSearch display">¡Descubrirlo ya!</button>
+
+    <hr class="linea">
     <!--POKEMON API RESULTS-->
-    <div class="display-none" id="divDisplay">
-        <img src="" alt="Pokemon image" id="pokemonImage" class="">
-        <h3 id="pokemonName"></h3>
-        <p id="pokemonAbilities"></p>
-
-        <table id="pokemonStats"></table>
-
-        
+    <div>
+        <h4 class="allPokemon">TODOS LOS POKEMONS</h4>
     </div>
 
+    <script src="https://kit.fontawesome.com/351cca41ca.js" crossorigin="anonymous"></script>
     <script src="get_api_infor.js"></script>
 </body>
 </html>
