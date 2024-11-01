@@ -41,6 +41,10 @@ nav i {
     color: rgb(140, 0, 0);
 }
 
+#changeScheme {
+    cursor: pointer;
+}
+
 .display-none {
     display: none;
 }
@@ -108,3 +112,32 @@ td {
     padding: 10px;
 }
 
+#showPok {
+    margin-top: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.pokemon {
+    text-align: center;
+    width: 200px;
+    background-color: #00AA82;
+    padding: 50px;
+    border: 1px solid #00AA82;
+    border-radius: 20px;
+    opacity: 60%;
+}
+
+.pokemon:hover {
+    opacity: 100%;
+    cursor: pointer;
+}
+
+#redirectB2 {
+    margin-top: 100px;
+}   
