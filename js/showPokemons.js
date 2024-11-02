@@ -37,10 +37,21 @@ async function showPokemons(limit = 12) {
         const pokemonName = document.getElementById('pokemon-name');
         const pokemonImage = document.getElementById('pokemon-image');
         const pokemonInfo = document.getElementById('pokemon-info');
+        const pokemonStatsHead = document.querySelector('.pokemonStatsHead');
+        const pokemonStatsBody = document.querySelector('.pokemonStatsBody');
 
         pokemonName.textContent = pokemonData.name;
         pokemonImage.src = pokemonData.sprites.front_default;
         pokemonInfo.textContent = `Altura: ${pokemonData.height} - Peso: ${pokemonData.weight}`;
+
+        pokemonStatsHead.innerHTML = '';
+        pokemonStatsBody.innerHTML = '';
+            
+            pokemonData.stats.forEach(stat => {
+                pokemonStatsHead.innerHTML += `<th>${stat.stat.name}</th>`
+                pokemonStatsBody.innerHTML += `<td>${stat.base_stat}</td>`
+            });
+
 
         modal.style.display = 'flex';
         document.body.classList.add('noScroll');

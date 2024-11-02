@@ -21,10 +21,10 @@ async function getData() {
             
             data.stats.forEach(stat => {
                 pokemonStats.innerHTML += `
-                <tr>
+               
                     <th>${stat.stat.name}</th>
                     <td>${stat.base_stat}</td>
-                </tr>`;
+                `;
             });
         } 
 

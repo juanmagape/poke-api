@@ -98,19 +98,39 @@ nav i {
     text-align: center;
 }
 
-#pokemonStats {
-    table-layout: fixed;
-    width: 30%;
-    border: 3px solid black;
-    border-radius: 10px;
-    margin: auto auto;
-
+.fl-table {
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: normal;
+    border: none;
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 100%;
+    white-space: nowrap;
+    background-color: white;
 }
 
-td {
-    border-left: 5px solid black;
-    padding: 10px;
+.fl-table td, .fl-table th {
+    text-align: center;
+    padding: 8px;
 }
+
+.fl-table td {
+    border-right: 1px solid #f8f8f8;
+    font-size: 12px;
+}
+
+.fl-table thead th {
+    color: #ffffff;
+    background: #4FC3A1;
+}
+
+
+.fl-table thead th:nth-child(odd) {
+    color: #ffffff;
+    background: #324960;
+}
+
 
 #showPok {
     margin-top: 100px;
@@ -189,13 +209,13 @@ a:link, a:visited{
     background-color: white;
     padding: 20px;
     border-radius: 8px;
-    width: 300px;
+    width: 1000px;
     text-align: center;
     color: black;
 }
 
 .fa-x {
-    margin-left: 250px;
+    margin-left: 950px;
     cursor: pointer;
     color: #00AA82;
 }
