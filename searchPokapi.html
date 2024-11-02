@@ -9,23 +9,52 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Slackey&display=swap" rel="stylesheet">
 </head>
-<body>
-    <h1 class="display title">PokeApi</h1>
+<body class="bgColor" id="bodyHTML">
+    <nav>
+        <h2>POKAPI</h2>
+        <i class="fa-solid fa-sun fa-2xl" id="changeScheme"></i>
+    </nav>
+    
+    <h1 class="display title">Busca tus pokemons favoritos</h1>
     <p class="display-none" id="textError">Ese pokemon no existe.</p>
     <input type="text" id="searchCharacter" class="display" placeholder="Ejemplo: Pikachu">
-    <button onclick="getData()" class="buttonSearch display">Search</button> <br>
+    <button onclick="getData()" class="buttonSearch display">Buscar pokémon</button>
 
-    <!--POKEMON API RESULTS-->
-    <div class="display-none" id="divDisplay">
-        <img src="" alt="Pokemon image" id="pokemonImage" class="">
-        <h3 id="pokemonName"></h3>
-        <p id="pokemonAbilities"></p>
+    <hr class="lineaBlack linea">
 
-        <table id="pokemonStats"></table>
+    <section>
+        <h4 class="allPokemon">TODOS LOS POKEMONS</h4>
+        <div id="showPok">
 
+        </div>
         
-    </div>
+        <div id="pokemon-modal" class="modal">
+            <div class="modal-content">
+                <i class="fa-solid fa-x"></i>
+                <h2 id="pokemon-name"></h2>
+                <img id="pokemon-image" src="" alt="Pokemon image" />
+                <p id="pokemon-info"></p>
 
-    <script src="get_api_infor.js"></script>
+                <table class="fl-table">
+                    <thead>
+                        <tr class="pokemonStatsHead">  
+                        
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr class="pokemonStatsBody">  
+                        
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </section>
+
+    <script src="./js/schemeColor.js"></script>
+    <script src="https://kit.fontawesome.com/351cca41ca.js" crossorigin="anonymous"></script>
+    <script src="./js/get_api_infor.js"></script>
 </body>
 </html>

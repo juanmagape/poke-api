@@ -30,6 +30,7 @@ nav {
 nav h2 {
     margin-left: 15px;
     background-color: #00AA82;
+    user-select: none;
 }
 
 nav i {
@@ -43,6 +44,10 @@ nav i {
 
 #changeScheme {
     cursor: pointer;
+}
+
+#changeScheme:hover {
+    opacity: 90%;
 }
 
 .display-none {
@@ -68,14 +73,14 @@ nav i {
     border-radius: 100px;
     margin-top: 10px;
     display: block;
-    padding: 20px 10.5%;
+    padding: 20px 9.5%;
     border: 1px solid #00AA82;
     color: white;
 }
 
 .buttonSearch:hover {
     cursor: pointer;
-    opacity: 90%;
+    opacity: 85%;
 }
 .lineaBlack {
     background-color: white;
@@ -187,6 +192,10 @@ a:link, a:visited{
     color: #00AA82;
 }
 
+a:hover {
+    opacity: 85%;
+}
+
 #pokemon-container {
     display: flex;
     flex-wrap: wrap;
@@ -222,4 +231,10 @@ a:link, a:visited{
 
 .noScroll {
     overflow: hidden;
+}
+
+#searchCharacter {
+    padding: 30px 10.5%;
+    border: 1px solid #232827;
+    border-radius: 100px;
 }
