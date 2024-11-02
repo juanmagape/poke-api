@@ -1,48 +1,91 @@
-async function getData() {
+let offset = 0;
+const limit = 12;
+let isFetching = false;
+
+async function showPokemons(offset = 0, limit = 12) {
     try {
-        const characterName = document.getElementById('searchCharacter').value.toLowerCase();
-        const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${characterName}`);
-
+        const response = await fetch(`https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${limit}`);
         const data = await response.json();
-        const divDisplay = document.getElementById('divDisplay');
-        const imgPokemon = document.getElementById('pokemonImage');
-        const pokemonName = document.getElementById('pokemonName');
-        const pokemonAbilities = document.getElementById('pokemonAbilities');
-        const pokemonStats = document.getElementById('pokemonStats');
-        console.log(data)
-        
-        if (characterName) {
-            divDisplay.classList.remove('display-none');
-            divDisplay.classList.add('display');
-            imgPokemon.src = data.sprites.front_default;
-            pokemonName.innerHTML = data.name;
-            pokemonAbilities.innerHTML = "Pokemon type: " + data.types[0].type.name;
-            pokemonStats.innerHTML = '';
-            
-            data.stats.forEach(stat => {
-                pokemonStats.innerHTML += `
-               
-                    <th>${stat.stat.name}</th>
-                    <td>${stat.base_stat}</td>
-                `;
-            });
-        } 
 
+        const pokemons = data.results;
+
+        displayPokemons(pokemons)
     }
 
     catch(error) {
-        const textError = document.getElementById('textError');
-
-        textError.classList.remove('display-none');
-        textError.classList.add('display');
-
-        hideMessageError(textError);
+        console.error(error)
+    } finally {
+        isFetching = false;
     }
 
-    async function hideMessageError(element) {
+    function displayPokemons(pokemons) {
+        const showPok = document.getElementById('showPok');
 
-        await new Promise(resolve => setTimeout(resolve, 5000))
-        element.classList.remove('display');
-        element.classList.add('display-none');
+        pokemons.forEach(async (pokemon) => {
+            const response = await fetch(pokemon.url);
+            const pokemonData = await response.json();
+    
+            const pokemonElement = document.createElement('div');
+            pokemonElement.classList.add('pokemon');
+            pokemonElement.innerHTML = `
+                <h3>${pokemonData.name}</h3>
+                <img src="${pokemonData.sprites.front_default}" alt="${pokemonData.name}">
+            `;
+            
+            pokemonElement.addEventListener('click', () => showPokemonDetails(pokemonData))
+            showPok.appendChild(pokemonElement);
+        });
     }
+
+    function showPokemonDetails(pokemonData) {
+        const modal = document.getElementById('pokemon-modal');
+        const pokemonName = document.getElementById('pokemon-name');
+        const pokemonImage = document.getElementById('pokemon-image');
+        const pokemonInfo = document.getElementById('pokemon-info');
+        const pokemonStatsHead = document.querySelector('.pokemonStatsHead');
+        const pokemonStatsBody = document.querySelector('.pokemonStatsBody');
+
+        pokemonName.textContent = pokemonData.name;
+        pokemonImage.src = pokemonData.sprites.front_default;
+        pokemonInfo.textContent = `Altura: ${pokemonData.height} - Peso: ${pokemonData.weight}`;
+
+        pokemonStatsHead.innerHTML = '';
+        pokemonStatsBody.innerHTML = '';
+            
+            pokemonData.stats.forEach(stat => {
+                pokemonStatsHead.innerHTML += `<th>${stat.stat.name}</th>`
+                pokemonStatsBody.innerHTML += `<td>${stat.base_stat}</td>`
+            });
+
+
+        modal.style.display = 'flex';
+        document.body.classList.add('noScroll');
+    }
+
+    const closeModal = document.querySelector('.fa-x');
+    closeModal.addEventListener('click', () => {
+        document.getElementById('pokemon-modal').style.display = 'none';
+        document.body.classList.remove('noScroll');
+    })
+
 }
+
+
+
+function loadMorePokemons() {
+    if (!isFetching) {
+        isFetching = true;
+        offset += limit;
+        showPokemons(offset, limit);
+    }
+
+}
+
+window.addEventListener('scroll', () => {
+    if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 100 && !isFetching) {
+        loadMorePokemons();
+    }
+})
+
+
+showPokemons(offset, limit)
