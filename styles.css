@@ -33,6 +33,7 @@ nav h2 {
     user-select: none;
 }
 
+
 nav i {
     background-color: #00AA82;
     margin-right: 25px;
@@ -237,4 +238,14 @@ a:hover {
     padding: 30px 10.5%;
     border: 1px solid #232827;
     border-radius: 100px;
+}
+
+
+.title2 {
+    color: white;
+    text-decoration: none;
+}
+
+.title2:link, .title2:visited{
+    color: white;
 }

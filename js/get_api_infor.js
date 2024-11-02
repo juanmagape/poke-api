@@ -1,19 +1,26 @@
 let offset = 0;
 const limit = 12;
 let isFetching = false;
+const searchPok = document.getElementById('searchPok');
 
 async function showPokemons(offset = 0, limit = 12) {
     try {
         const response = await fetch(`https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${limit}`);
         const data = await response.json();
 
+        
         const pokemons = data.results;
 
         displayPokemons(pokemons)
     }
 
     catch(error) {
-        console.error(error)
+        const textError = document.getElementById('textError');
+
+        textError.classList.remove('display-none');
+        textError.classList.add('display');
+
+        hideMessageError(textError);
     } finally {
         isFetching = false;
     }
@@ -68,6 +75,44 @@ async function showPokemons(offset = 0, limit = 12) {
         document.body.classList.remove('noScroll');
     })
 
+    
+    searchPok.addEventListener('click', () => {
+        
+    })
+
+    async function hideMessageError(element) {
+
+        await new Promise(resolve => setTimeout(resolve, 5000))
+        element.classList.remove('display');
+        element.classList.add('display-none');
+    }
+
+    
+    searchPok.addEventListener('click', async () => {
+        const characterName = searchCharacter.value.toLowerCase().trim();
+    
+        if (characterName) {
+            try {
+                const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${characterName}`);
+                if (response.ok) {
+                    const pokemonData = await response.json();
+                    showPok.innerHTML = ''; 
+                    displayPokemons([pokemonData]);
+                    showPokemonDetails(pokemonData);
+                } else {
+                    const textError = document.getElementById('textError');
+
+                    textError.classList.remove('display-none');
+                    textError.classList.add('display');
+
+                    hideMessageError(textError);
+                }
+            } catch (error) {
+                console.error("Error al buscar el Pokémon:", error);
+            }
+        }
+    });
+
 }
 
 
@@ -86,6 +131,7 @@ window.addEventListener('scroll', () => {
         loadMorePokemons();
     }
 })
+
 
 
 showPokemons(offset, limit)
