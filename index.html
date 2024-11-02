@@ -20,17 +20,39 @@
     <h1 class="display title">¡Descubre todo sobre tus Pokémon favoritos al instante!</h1>
     <button id="redirectButton" class="buttonSearch display">¡Descubrirlo ya!</button>
 
-    <hr class="lineaBlack linea" id="linea">
+    <hr class="lineaBlack linea">
     <!--POKEMON API RESULTS-->
     <section>
         <h4 class="allPokemon">TODOS LOS POKEMONS</h4>
         <div id="showPok">
 
         </div>
+        
+        <div id="pokemon-modal" class="modal">
+            <div class="modal-content">
+                <i class="fa-solid fa-x"></i>
+                <h2 id="pokemon-name"></h2>
+                <img id="pokemon-image" src="" alt="Pokemon image" />
+                <p id="pokemon-info"></p>
+            </div>
+        </div>
 
         <button id="redirectB2" class="buttonSearch display">Descubre más</button>
     </section>
 
+    <hr class="lineaBlack linea">
+
+    <section class="finalSection">
+            <div class="itemsFinal">
+                <h3>POKAPI</h3>
+                <p>hecho por <a href="https://www.linkedin.com/in/juanma-gape" target="_blank">Juan Manuel</a></p>
+            </div>
+
+            <div>
+                <a href="https://github.com/juanmagape/poke-api" target="_blank">Proyecto en GitHub</a>
+            </div>
+
+    </section>
     <script src="./js/schemeColor.js"></script>
     <script src="./js/redirect.js"></script>
     <script src="./js/showPokemons.js"></script>

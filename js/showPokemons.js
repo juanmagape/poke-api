@@ -26,10 +26,31 @@ async function showPokemons(limit = 12) {
                 <h3>${pokemonData.name}</h3>
                 <img src="${pokemonData.sprites.front_default}" alt="${pokemonData.name}">
             `;
-    
+            
+            pokemonElement.addEventListener('click', () => showPokemonDetails(pokemonData))
             showPok.appendChild(pokemonElement);
         });
     }
+
+    function showPokemonDetails(pokemonData) {
+        const modal = document.getElementById('pokemon-modal');
+        const pokemonName = document.getElementById('pokemon-name');
+        const pokemonImage = document.getElementById('pokemon-image');
+        const pokemonInfo = document.getElementById('pokemon-info');
+
+        pokemonName.textContent = pokemonData.name;
+        pokemonImage.src = pokemonData.sprites.front_default;
+        pokemonInfo.textContent = `Altura: ${pokemonData.height} - Peso: ${pokemonData.weight}`;
+
+        modal.style.display = 'flex';
+        document.body.classList.add('noScroll');
+    }
+
+    const closeModal = document.querySelector('.fa-x');
+    closeModal.addEventListener('click', () => {
+        document.getElementById('pokemon-modal').style.display = 'none';
+        document.body.classList.remove('noScroll');
+    })
 }
 
 showPokemons()
