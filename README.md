@@ -1,4 +1,4 @@
-# POKAPI
+# POKAPI ![pokapilogo](./pokeapilogo.png)
 
 POKAPI es una página web en la cual puedes ver cada uno de los pokemons junto con su tipo y stats.
 Este proyecto ha sido llevado a cabo con la API de **[pokeapi.co](https://pokeapi.co/)**, que nos permite recopilar la información de cada uno de los pokemons disponibles.
@@ -12,15 +12,16 @@ Este proyecto ha sido llevado a cabo con la API de **[pokeapi.co](https://pokeap
 - ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 
 
-## Clonar proyecto
+## Clonar proyecto 💻
 
 ```
 git clone https://github.com/juanmagape/poke-api
 ```
 
-## Vista Proyecto 💥
+## Vista Proyecto 👓
 
 [Página del proyecto](https://poke-api-juanmagape.vercel.app/)
+[Diseño en Figma](https://www.figma.com/design/pqNwplw8iONPeUkDgQQhPw/pokapi-(Copy)?t=95Vd699xQMc7I8vl-1)
 
 - Pantalla de inicio
 
@@ -32,4 +33,4 @@ git clone https://github.com/juanmagape/poke-api
 
 ------
 
-Desarrollado por [**Juan Manuel**](https://www.linkedin.com/in/juanma-gape/) 🤘​
+Desarrollado por [**Juan Manuel**](https://www.linkedin.com/in/juanma-gape/)
