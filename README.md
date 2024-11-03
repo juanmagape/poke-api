@@ -20,7 +20,7 @@ git clone https://github.com/juanmagape/poke-api
 
 ## Vista Proyecto 👓
 
-[Página del proyecto](https://poke-api-juanmagape.vercel.app/)
+[Página del proyecto](https://poke-api-juanmagape.vercel.app/) | 
 [Diseño en Figma](https://www.figma.com/design/pqNwplw8iONPeUkDgQQhPw/pokapi-(Copy)?t=95Vd699xQMc7I8vl-1)
 
 - Pantalla de inicio
