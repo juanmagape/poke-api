@@ -1,4 +1,4 @@
-# POKAPI ![pokapilogo](./pokeapilogo.png)
+![pokapilogo](./pokeapilogo.png)
 
 POKAPI es una página web en la cual puedes ver cada uno de los pokemons junto con su tipo y stats.
 Este proyecto ha sido llevado a cabo con la API de **[pokeapi.co](https://pokeapi.co/)**, que nos permite recopilar la información de cada uno de los pokemons disponibles.
